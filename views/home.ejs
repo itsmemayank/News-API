@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital@1&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <title>News API</title>
+    <style>
+        body {
+            font-family: 'Secular One', sans-serif;
+        }
+
+        .main {
+            margin: 10px;
+            padding: 20px;
+            border: 8px solid black;
+            border-radius: 20px;
+            font-family: 'Courier Prime', monospace;
+        }
+
+        .heading {
+            display: flex;
+        }
+
+        .bottom {
+            padding-top: 30px;
+            padding-left: 30px;
+        }
+
+        h1 {
+            padding: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 900;
+        }
+
+        h3 {
+            padding: 5px;
+            font-size: 1.2rem;
+            font-weight: 900;
+        }
+
+        p {
+            font-size: larger;
+            text-align: center;
+            padding: 20px;
+        }
+
+        img {
+            border: 5px solid black;
+            border-radius: 10px;
+            margin: 5px 0 5px 5px;
+            padding: 5px;
+            align-items: center;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>!!! Breaking News !!!</h1>
+        <% list.forEach(data => { %>
+        <div class="main">
+            <h2><i>Title: </i><%=  data.title %></h2>
+            <div class="heading">
+                <div class="top">
+                    <img src="<%= data.urlToImage %> " alt="">
+                </div>
+                <div class="bottom">
+                    <h3><i>Description: </i><%=  data.description %></h3>
+                    <h3><i>Link: </i><a href="<%= data.url %>"><%= data.url %></a></h3>
+                </div>
+            </div>
+        </div>
+        <% }); %>
+        <p>copyright &copy;2020 Mayank Nagora</p>
+    </div>
+    <script src="api.js"></script>
+</body>
+</html>
